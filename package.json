@@ -1,0 +1,36 @@
+{
+  "name": "learn-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack -h",
+    "build": "webpack  --mode=none --config webpack/webpack.common.js",
+    "commit": "auto-commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FearlessMa/learn-webpack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FearlessMa/learn-webpack/issues"
+  },
+  "homepage": "https://github.com/FearlessMa/learn-webpack#readme",
+  "devDependencies": {
+    "@fearless-ma/auto-commit": "^1.35.1-beta.1",
+    "commitizen": "^4.1.2",
+    "conventional-changelog-cli": "^2.0.34",
+    "cz-conventional-changelog": "^3.2.0",
+    "eslint": "^7.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.4",
+    "prettier": "^2.0.5",
+    "standard-version": "^8.0.0",
+    "validate-commit-msg": "^2.14.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
