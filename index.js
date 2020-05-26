@@ -1,17 +1,29 @@
-
 import logo from './img/webpack4.png';
 import style from './css/index.less';
 import { createImg } from './src/createAvatar.js'
+import { es6 } from './src/es6';
+import _ from 'lodash';
 
-const a = 'a';
 const el = document.getElementById('app');
 const img = new Image();
 img.src = logo;
 img.classList.add(style.avatar);
 el.appendChild(img);
 
-// conle.log(1)
+// console.log(m)
 const elImg = createImg();
 el.appendChild(elImg);
 
+es6()
 
+// const App = () => <div>123</div>
+class App extends React.Component {
+
+  render() {
+    return <div>
+      <img className={style.avatar} src={logo} />
+    </div>
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('app'));

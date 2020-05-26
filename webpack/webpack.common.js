@@ -2,7 +2,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack')
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin"); // 压缩css
 
+const handler = (percentage, message, ...args) => {
+  // e.g. Output each progress message directly to the console:
+  // console.info(percentage, message, ...args);
+};
 module.exports = {
   entry: './index.js',
   mode: "none",
@@ -12,6 +18,11 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
       {
         test: /.(png|jpg|gif|svg)$/,
         use: {
@@ -23,27 +34,33 @@ module.exports = {
         }
       },
       {
-        test: /.(css|less)$/,
-        loader: ['style-loader', {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 2, // 所有文件都要经过 less postcss 的loader
-            modules: true, //使用css module
-          }
-        },
-          'less-loader',
-          'postcss-loader'
-        ]
-      }
+        test: /\.(eot|ttf|svg|woff|woff2)$/,
+        use: {
+          loader: 'file-loader',
+        }
+      },
     ]
   },
-  devtool: 'cheap-module-eval-source-map', // 开发
-  // devtool: 'cheap-module-source-map', // 生产
-  // devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
     }),
+    new webpack.ProvidePlugin({
+      React: "react",
+      ReactDOM: "react-dom"
+    }),
+    new webpack.ProgressPlugin(handler), //编译进度
+    // new webpack.HotModuleReplacementPlugin() // 默认开启
   ],
+  optimization: {
+    minimizer: [new OptimizeCSSAssetsPlugin({})],
+    splitChunks: {
+      chunks: 'all', // 公用的类库拆分，默认全部
+      // cacheGroups: {
+      //   vendors: false,
+      //   default: false,
+      // }
+    }
+  },
 }
