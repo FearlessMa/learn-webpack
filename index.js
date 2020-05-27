@@ -13,7 +13,7 @@ el.appendChild(img);
 // console.log(m)
 const elImg = createImg();
 el.appendChild(elImg);
-
+// const a = 'a'
 es6()
 
 // const App = () => <div>123</div>

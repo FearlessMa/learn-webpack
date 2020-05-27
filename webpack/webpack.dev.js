@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const path = require('path');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin'); // 日志输出
 var notifier = require('node-notifier');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = merge(common, {
@@ -18,6 +19,16 @@ module.exports = merge(common, {
         test: /.(css|less)$/,
         loader: [
           'style-loader',
+          // {
+          //   loader: MiniCssExtractPlugin.loader, // 提取css
+          //   options: {
+          //     // publicPath: '/public/path/to/',
+          //     // 只在开发模式中启用热更新
+          //     hmr: true,
+          //     // 如果模块热更新不起作用，重新加载全部样式
+          //     // reloadAll: true,
+          //   },
+          // },
           {
             loader: 'css-loader',
             options: {
@@ -25,8 +36,8 @@ module.exports = merge(common, {
               modules: true, //使用css module
             }
           },
+          'postcss-loader',
           'less-loader',
-          'postcss-loader'
         ]
       }
     ]
@@ -34,34 +45,20 @@ module.exports = merge(common, {
   devtool: 'cheap-module-eval-source-map', // 开发
   devServer: {
     contentBase: "./dist",
-    open: false,
+    // open: false,
     port: 9000,
     hot: true,
-    quiet: true,
+    // quiet: true,
     // stats: 'normal',
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: "css/[name].css",
+      chunkFilename: "css/[id].css"
+    }),
     // new webpack.HotModuleReplacementPlugin(),
-    new FriendlyErrorsWebpackPlugin(
-      // {
-      // compilationSuccessInfo: {
-      //   messages: ['You application is running here http://localhost:3000'],
-      //   notes: ['Some additional notes to be displayed upon successful compilation']
-      // },
-      // onErrors: (severity, errors) => {
-      //   if (severity !== 'error') {
-      //     return;
-      //   }
-      //   const error = errors[0];
-      //   notifier.notify({
-      //     title: "Webpack error",
-      //     message: severity + ': ' + error.name,
-      //     subtitle: error.file || '',
-      //   });
-      // }
-    // }
-    )
+    // new FriendlyErrorsWebpackPlugin()
   ],
-  stats: 'errors-only', //minimal
+  // stats: 'errors-only', //minimal
   // stats: "minimal"
 })

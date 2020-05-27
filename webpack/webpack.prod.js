@@ -11,10 +11,10 @@ const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 module.exports = merge(common, {
   mode: "production",
   // mode: "development",
-  output: {
-    filename: 'main.[chunkhash:8].js',
-    path: path.resolve(__dirname, '../dist')
-  },
+  // output: {
+  //   filename: 'main.[chunkhash:8].js',
+  //   path: path.resolve(__dirname, '../dist')
+  // },
   module: {
     rules: [
       {
@@ -35,8 +35,8 @@ module.exports = merge(common, {
               modules: true, //使用css module
             }
           },
+          'postcss-loader',
           'less-loader',
-          'postcss-loader'
         ]
       }
     ]
@@ -55,26 +55,26 @@ module.exports = merge(common, {
       minChunkSize: 1000,
       maxChunks: 5
     }),
-    // new FriendlyErrorsWebpackPlugin(),
-    // new BundleAnalyzerPlugin({
+    // new FriendlyErrorsWebpackPlugin(), // 日志输出
+    // new BundleAnalyzerPlugin({ // bundle size 分析
     //   analyzerHost: '127.0.0.1',
     //   analyzerPort: 8889,
     //   openAnalyzer: false,
     // }),
-    new HtmlWebpackExternalsPlugin({
-			externals: [
-				{
-					module: 'react', // 模块名称
-					entry: 'https://11.url.cn/now/lib/16.2.0/react.min.js', // 引入的cdn
-					global: 'React', // 创建一个全局对象 React
-				},
-				{
-					module: 'react-dom',
-					entry: 'https://11.url.cn/now/lib/16.2.0/react-dom.min.js',
-					global: 'ReactDOM',
-				},
-			]
-		}),
+    // new HtmlWebpackExternalsPlugin({ //cdn 引入打包
+		// 	externals: [
+		// 		{
+		// 			module: 'react', // 模块名称
+		// 			entry: 'https://11.url.cn/now/lib/16.2.0/react.min.js', // 引入的cdn
+		// 			global: 'React', // 创建一个全局对象 React
+		// 		},
+		// 		{
+		// 			module: 'react-dom',
+		// 			entry: 'https://11.url.cn/now/lib/16.2.0/react-dom.min.js',
+		// 			global: 'ReactDOM',
+		// 		},
+		// 	]
+		// }),
   ],
-  stats: "normal"
+  // stats: "normal"
 })

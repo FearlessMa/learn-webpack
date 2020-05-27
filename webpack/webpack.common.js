@@ -13,7 +13,7 @@ module.exports = {
   entry: './index.js',
   mode: "none",
   output: {
-    filename: 'main.[chunkhash:8].js',
+    filename: 'main.[contenthash:8].js',
     path: path.resolve(__dirname, '../dist')
   },
   module: {
@@ -54,7 +54,7 @@ module.exports = {
     // new webpack.HotModuleReplacementPlugin() // 默认开启
   ],
   optimization: {
-    minimizer: [new OptimizeCSSAssetsPlugin({})],
+    // minimizer: [new OptimizeCSSAssetsPlugin({})],
     splitChunks: {
       chunks: 'all', // 公用的类库拆分，默认全部
       // cacheGroups: {
@@ -63,4 +63,5 @@ module.exports = {
       // }
     }
   },
+  performance: false, // 关闭性能上的一些问题
 }

@@ -5,8 +5,8 @@
   "warnings": [],
   "version": "4.43.0",
   "hash": "ec050fccd4f309998879",
-  "time": 59,
-  "builtAt": 1590490992877,
+  "time": 64,
+  "builtAt": 1590546325806,
   "publicPath": "",
   "outputPath": "/Users/mhc 1/Work/Webpack/learn-webpack/dist",
   "assetsByChunkName": {},
@@ -110,8 +110,8 @@
               "issuerName": null,
               "issuerPath": null,
               "profile": {
-                "factory": 14,
-                "building": 13
+                "factory": 16,
+                "building": 18
               },
               "failed": false,
               "errors": 0,
@@ -170,8 +170,8 @@
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 14,
-            "building": 13
+            "factory": 16,
+            "building": 18
           },
           "failed": false,
           "errors": 0,
