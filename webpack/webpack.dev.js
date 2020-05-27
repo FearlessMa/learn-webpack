@@ -3,7 +3,6 @@ const common = require('./webpack.common.js');
 const webpack = require('webpack');
 const path = require('path');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin'); // 日志输出
-var notifier = require('node-notifier');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
@@ -52,10 +51,10 @@ module.exports = merge(common, {
     // stats: 'normal',
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: "css/[name].css",
-      chunkFilename: "css/[id].css"
-    }),
+    // new MiniCssExtractPlugin({
+    //   filename: "css/[name].css",
+    //   chunkFilename: "css/[id].css"
+    // }),
     // new webpack.HotModuleReplacementPlugin(),
     // new FriendlyErrorsWebpackPlugin()
   ],
