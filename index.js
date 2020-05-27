@@ -18,7 +18,6 @@ es6()
 
 // const App = () => <div>123</div>
 class App extends React.Component {
-
   render() {
     return <div>
       <img className={style.avatar} src={logo} />
