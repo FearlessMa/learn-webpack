@@ -1,6 +1,6 @@
 {
   "name": "learn-webpack",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
     "build": "webpack --config webpack/webpack.prod.js",
     "build:dll": "webpack --config ./webpack/webpack.dll.js",
     "analyz": "NODE_ENV=production npm_config_report=true npm run build",
-    "bundle": "webpack webpack --profile --json > stats.json --config webpack/webpack.prod.js"
+    "bundle": "webpack webpack --profile --json > stats.json --config webpack/webpack.prod.js",
+    "version": "standard-version"
   },
   "repository": {
     "type": "git",
