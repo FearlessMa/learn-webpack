@@ -11,7 +11,7 @@ const webpack = require('webpack');
 // console.log('PATHS: ', PATHS);
 const prod = require('../webpack/webpack.prod');
 
-webpack(prod, (err, stats) => {
+const compiler = webpack(prod, (err, stats) => {
   // console.log('stats: ', stats);
   console.log('err: ', err);
   // 输出打包过程的描述信息
@@ -23,3 +23,12 @@ webpack(prod, (err, stats) => {
     })
   );
 });
+
+Object.keys(compiler.hooks).forEach(hookName => {
+  if(compiler.hooks[hookName] && compiler.hooks[hookName].tap){
+    compiler.hooks[hookName].tap('anyString', () => {
+      console.log(`run -> ${hookName}`);
+    });
+  }
+})
+// compiler.run();
