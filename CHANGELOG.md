@@ -1,3 +1,14 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.4.0](https://github.com/FearlessMa/learn-webpack/compare/v1.3.0...v1.4.0) (2020-05-28)
+
+
+### Features
+
+* 使用travis ([6d13169](https://github.com/FearlessMa/learn-webpack/commit/6d13169726f100f0955e25f941587964310a2caa))
+
 # [1.3.0](https://github.com/FearlessMa/learn-webpack/compare/v1.2.0...v1.3.0) (2020-05-28)
 
 
@@ -33,6 +44,3 @@
 ### Features
 
 * webpack ([f414813](https://github.com/FearlessMa/learn-webpack/commit/f4148132ba891f8d7f3a31c96bb937dabcc664a2))
-
-
-
