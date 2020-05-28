@@ -1,8 +1,4 @@
-# Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-## [1.3.0](https://github.com/FearlessMa/learn-webpack/compare/v1.2.0...v1.3.0) (2020-05-28)
+# [1.3.0](https://github.com/FearlessMa/learn-webpack/compare/v1.2.0...v1.3.0) (2020-05-28)
 
 
 ### Features
@@ -11,6 +7,8 @@ All notable changes to this project will be documented in this file. See [standa
 * 增加prettier ([1a8f6a7](https://github.com/FearlessMa/learn-webpack/commit/1a8f6a769159843356c915de7340a8a6271ea750))
 * 格式化 ([d410091](https://github.com/FearlessMa/learn-webpack/commit/d4100919af42564f5f06c39079cb1ad766d9a357))
 * 格式化 ([02d862b](https://github.com/FearlessMa/learn-webpack/commit/02d862b57108fc08e7b8f9b3c419cee3f273a44d))
+
+
 
 # [1.2.0](https://github.com/FearlessMa/learn-webpack/compare/v1.1.1...v1.2.0) (2020-05-27)
 
@@ -35,3 +33,6 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * webpack ([f414813](https://github.com/FearlessMa/learn-webpack/commit/f4148132ba891f8d7f3a31c96bb937dabcc664a2))
+
+
+
